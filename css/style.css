@@ -995,9 +995,16 @@ ul {
     .trends-item {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(150px,auto));
         column-gap: 4px;
-    }
+}
+
+.item-title {
+    font-size: 1rem;
+}
+
+.wrp {
+    padding: 14px 1px 25px 4px;
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
