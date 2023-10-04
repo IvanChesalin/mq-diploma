@@ -871,7 +871,7 @@ ul {
 @media (max-width: 767px) {
 
     .header {
-        background: url("../images/banner-mobile.jpg");
+        background-image: url("../images/banner-mobile.jpg");
         background-size: cover;
         background-position: center;
         min-height: 638px;
@@ -954,6 +954,18 @@ ul {
     .good {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .good-one {
+        background-image: url(../images/shop-item-mobile1.jpg);
+    }
+
+    .good-two {
+        background-image: url(../images/shop-item-mobile2.jpg);
+    }
+
+    .good-three {
+        background-image: url(../images/shop-item-mobile3.jpg);
     }
 
     .good:nth-child(1), .good:nth-child(2) {
