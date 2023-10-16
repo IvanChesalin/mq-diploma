@@ -19,9 +19,12 @@ ul {
 
 :root {
     --color-regular: #b59f5b;
-    --fontsize-regular: 0.875rem;     /* 14px */
-    --fontsize-mini: 0.75rem;           /*12px*/
-    --fontsize-popup: 0.8125rem;        /*13px*/
+    --fontsize-regular: 0.875rem;
+    /* 14px */
+    --fontsize-mini: 0.75rem;
+    /*12px*/
+    --fontsize-popup: 0.8125rem;
+    /*13px*/
     --fontfamily-regular: OpenSans;
 }
 
@@ -90,10 +93,9 @@ ul {
 }
 
 .trends-item {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
 }
 
 .items {
@@ -104,6 +106,7 @@ ul {
     z-index: 1;
     position: relative;
     box-sizing: border-box;
+    width: 25%;
 
 }
 
@@ -149,8 +152,8 @@ ul {
 
 .wrp {
     border: 3px solid var(--color-regular);
-    margin: 10px;
-    padding: 33px 38px 19px;
+    margin: 20px;
+    padding: 39px 33px 37px;
     z-index: 3;
 
 }
@@ -426,8 +429,10 @@ ul {
 
 .search {
     display: flex;
+    width: 100%;
 
 }
+
 
 .search-field {
     padding: 0px 23px;
@@ -599,6 +604,7 @@ ul {
 .ourgoods-content {
     display: flex;
     padding: 0 15px;
+    gap: 66px;
 
 }
 
@@ -612,40 +618,18 @@ ul {
 .good {
     min-height: 440px;
     width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-.good:nth-child(1),
-.good:nth-child(2) {
-    margin-right: 66px;
-}
 
-.good-one {
-    background-image: url(../images/shop-item-desk1.jpg);
-    background-position: 25px center;
-    width: 90%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50%;
+.good-picture {
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
 
-}
-
-.good-two {
-    background-image: url(../images/shop-item-desk2.jpg);
-    background-position: 25px center;
-    width: 90%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50%;
-}
-
-.good-three {
-    background-image: url(../images/shop-item-desk3.jpg);
-    background-position: 25px center;
-    width: 90%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50%;
 }
 
 .good-title {
@@ -674,6 +658,7 @@ ul {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .price {
@@ -703,6 +688,9 @@ ul {
     height: 50px;
     background-color: var(--color-regular);
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-family: var(--fontfamily-regular), Arial, sans-serif;
     font-weight: bold;
@@ -772,7 +760,7 @@ ul {
 }
 
 /* -------------------popup------------------------------------------------- */
-/* .popup_hidden {
+.popup_hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -781,12 +769,12 @@ ul {
     border: 0;
     clip: rect(0 0 0 0);
     overflow: hidden;
-} */
+}
 
 .wrp-pop {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
     background-color: rgb(0 0 0 / 59%);
@@ -803,13 +791,12 @@ ul {
     z-index: 1;
     position: relative;
     padding: 54px 30px;
-    top: 15%;
 }
 
 .cross {
     position: absolute;
-    width: 40px;
-    top: -47px;
+    width: 27px;
+    top: -30px;
     right: 0;
     cursor: pointer;
 
@@ -831,10 +818,12 @@ ul {
     box-sizing: border-box;
     padding: 18px;
     border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     outline: none;
     background-color: #f4f7f6;
     margin-bottom: 38px;
-
 
 }
 
@@ -843,10 +832,10 @@ ul {
 }
 
 .often-arrows {
-    position: absolute;
-    transform: scale(0.06);
-    top: -122px;
-    right: -67px;
+    background-image: url(../svg/form-arrows.svg);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
 
 }
 
@@ -924,11 +913,10 @@ ul {
 .bth-pop {
     width: 100%;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 25px;
     border: none;
     outline: none;
     background-color: var(--color-regular);
-    background-color: #b59f5b;
     text-transform: uppercase;
     color: #fff;
     cursor: pointer;
@@ -944,7 +932,7 @@ ul {
 /* -----------------------media---------------------------------------------- */
 
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 641px) and (max-width: 1199px) {
     .list-nav {
         display: none;
     }
@@ -958,11 +946,12 @@ ul {
         border-radius: 3px;
     }
 
-
     .trends-item {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .items {
+        width: 49%;
     }
 
     .header {
@@ -989,21 +978,29 @@ ul {
 
 
     .article {
-        width: 50%;
+        width: 100%;
         margin-top: 15px;
         margin-left: 0px;
         display: block;
     }
 
+    .card::after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #eeeeee;
+        margin-top: 22px;
+    }
+
     .card {
         margin-left: 0px;
-        width: 160%;
+        width: 24rem;
         margin-top: 10px;
     }
 
     .content {
         width: 100%;
-
+        justify-content: flex-start;
+        gap: 35px;
     }
 
     .ourgoods-content {
@@ -1012,21 +1009,8 @@ ul {
         width: 100%;
     }
 
-    .good-one {
-        background-image: url(../images/shop-item-tablet1.jpg);
-    }
-
-    .good-two {
-        background-image: url(../images/shop-item-tablet2.jpg);
-    }
-
-    .good-three {
-        background-image: url(../images/shop-item-tablet3.jpg);
-    }
-
-    .good:nth-child(1),
-    .good:nth-child(2) {
-        margin-right: 22px;
+    .ourgoods-content {
+        gap: 22px;
     }
 
     .good:nth-child(3) {
@@ -1039,7 +1023,7 @@ ul {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
 
     .header {
         background-image: url("../images/banner-mobile.jpg");
@@ -1088,9 +1072,11 @@ ul {
     }
 
     .trends-item {
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: 1fr;
-        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .items {
+        width: 100%;
     }
 
     .content {
@@ -1108,6 +1094,17 @@ ul {
 
     .card {
         margin: 15px 0;
+    }
+
+    .card::after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #eeeeee;
+        margin-top: 22px;
+    }
+
+    .aside {
+        padding: 15px;
     }
 
     .newposts {
@@ -1129,33 +1126,34 @@ ul {
         margin-bottom: 20px;
     }
 
-    .good-one {
-        background-image: url(../images/shop-item-mobile1.jpg);
-    }
-
-    .good-two {
-        background-image: url(../images/shop-item-mobile2.jpg);
-    }
-
-    .good-three {
-        background-image: url(../images/shop-item-mobile3.jpg);
-    }
-
-    .good:nth-child(1),
-    .good:nth-child(2) {
-        margin-right: 0;
+    .ourgoods-content {
+        gap: 25px;
     }
 
     .newposts {
         margin: 45px auto;
+        width: 100%;
     }
 
     .search {
         margin: 0 auto;
     }
 
+    .search-btn {
+        width: 100%;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
     .email {
         margin: 18px auto;
+        width: 100%;
+    }
+
+    .email-button {
+        width: 100%;
     }
 
     .tags {
@@ -1165,32 +1163,26 @@ ul {
     .popup {
         width: 330px;
     }
-
-
 }
 
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
     .trends-item {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(4, minmax(150px, auto));
-        column-gap: 4px;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .item-title {
+        font-size: 1rem;
+    }
+
+    .wrp {
+        padding: 14px 1px 25px 4px;
     }
 }
 
-.item-title {
-    font-size: 1rem;
-}
-
-.wrp {
-    padding: 14px 1px 25px 4px;
-}
-
 @media (max-width: 640px) and (orientation: landscape) {
-    .trends-item {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 4px;
+    .items {
+        width: 49%;
+
     }
 }
